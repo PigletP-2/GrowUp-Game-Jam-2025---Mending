@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci75ecppggk4p"]
+
+[ext_resource type="Script" uid="uid://c4ymuo6sdniao" path="res://cardManager.gd" id="1_tbkxe"]
+[ext_resource type="PackedScene" uid="uid://bg6i2m5cnsp1f" path="res://Card.tscn" id="2_hpm8w"]
+[ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="3_br8jt"]
+[ext_resource type="Resource" uid="uid://b4chj7d0owdj3" path="res://addons/tube/game_context.tres" id="4_1sk7x"]
+[ext_resource type="Script" uid="uid://cj26lr5esjgyk" path="res://MultiplayerManager.gd" id="5_dpvpm"]
+
+[node name="Main" type="Node2D"]
+
+[node name="CardManager" type="Node2D" parent="."]
+script = ExtResource("1_tbkxe")
+
+[node name="Card" parent="CardManager" instance=ExtResource("2_hpm8w")]
+
+[node name="TubeClient" type="Node" parent="."]
+script = ExtResource("3_br8jt")
+context = ExtResource("4_1sk7x")
+metadata/_custom_type_script = "uid://cy006uvidc4y"
+
+[node name="Node" type="Node" parent="TubeClient"]
+script = ExtResource("5_dpvpm")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 533.0
+offset_top = 129.0
+offset_right = 612.0
+offset_bottom = 152.0
+text = "Session ID"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 469.0
+offset_top = 55.0
+offset_right = 689.0
+offset_bottom = 125.0
+text = "Create Session"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 505.0
+offset_top = 234.0
+offset_right = 683.0
+offset_bottom = 293.0
+text = "Join session"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 512.0
+offset_top = 307.0
+offset_right = 682.0
+offset_bottom = 372.0
+
+[connection signal="_session_initiated" from="TubeClient" to="TubeClient/Node" method="_on_tube_client__session_initiated"]
+[connection signal="session_created" from="TubeClient" to="TubeClient/Node" method="_on_tube_client_session_created"]
+[connection signal="session_joined" from="TubeClient" to="TubeClient/Node" method="_on_tube_client_session_joined"]
+[connection signal="pressed" from="Button" to="TubeClient/Node" method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="TubeClient/Node" method="_on_button_2_pressed"]
