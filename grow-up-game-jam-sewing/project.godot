@@ -22,3 +22,7 @@ window/vsync/vsync_mode=0
 [dotnet]
 
 project/assembly_name="Grow Up Game Jam Sewing"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tube/plugin.cfg")
