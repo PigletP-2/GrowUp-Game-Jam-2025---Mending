@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 		var mouse_pos = get_global_mouse_position()
 		card_being_dragged.position = Vector2(clamp(mouse_pos.x, 0, screen_size.x), 
 			clamp(mouse_pos.y, 0, screen_size.y))
-		
 	
 	
 func _input(event):
@@ -31,6 +30,21 @@ func _input(event):
 		else:
 			card_being_dragged = null
 
+func connect_card_signals(card):
+	card.connect("hovered", on_hovered_over_card)
+	card.connect("hovered_off", on_hovered_off_card)
+
+
+func on_hovered_over_card(card):
+	print("hovered")
+	
+
+func on_hovered_off_card(card):
+	print("hovered_off")
+	
+	
+	
+	
 func raycast_check_for_cards():
 	var space_state = get_world_2d().direct_space_state
 	var parameters = PhysicsPointQueryParameters2D.new()
