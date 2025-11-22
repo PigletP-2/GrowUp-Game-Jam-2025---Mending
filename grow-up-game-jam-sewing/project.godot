@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Grow Up Game Jam Sewing"
+run/main_scene="uid://bib76auiumexo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/vsync/vsync_mode=0
 
 [dotnet]
 
