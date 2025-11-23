@@ -33,3 +33,11 @@ func _on_card_spawned():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_host_button_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_join_button_pressed() -> void:
+	pass # Replace with function body.

@@ -1,24 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://bib76auiumexo"]
+[gd_scene load_steps=3 format=3 uid="uid://bib76auiumexo"]
 
-[ext_resource type="Script" uid="uid://cj275ltbfrxk2" path="res://Scripts/main.gd" id="1_uu6xs"]
-[ext_resource type="PackedScene" uid="uid://ddreqfmvnqqp0" path="res://ticket_manager.tscn" id="2_r0du0"]
-[ext_resource type="PackedScene" uid="uid://dujkendqt6ls1" path="res://addons/tube/tube_inspector.tscn" id="3_3dxm6"]
-[ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="4_lgr22"]
-[ext_resource type="Resource" uid="uid://b4chj7d0owdj3" path="res://addons/tube/game_context.tres" id="5_trn2v"]
+[ext_resource type="Script" uid="uid://c63onbh1x7crv" path="res://Multiplayer.gd" id="1_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://bqaij5xfnwhk0" path="res://Scenes/Player_Fields.tscn" id="2_lgr22"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_uu6xs")
+script = ExtResource("1_3dxm6")
+player_field_scene = ExtResource("2_lgr22")
 
-[node name="TubeInspector" parent="." instance=ExtResource("3_3dxm6")]
-visible = false
-offset_left = 323.0
-offset_top = -1.0
-offset_right = 847.0
-offset_bottom = 696.0
+[node name="HostButton" type="Button" parent="."]
+offset_left = 337.0
+offset_top = 398.0
+offset_right = 381.0
+offset_bottom = 429.0
+text = "Host"
 
-[node name="TubeClient" type="Node" parent="."]
-script = ExtResource("4_lgr22")
-context = ExtResource("5_trn2v")
-metadata/_custom_type_script = "uid://cy006uvidc4y"
+[node name="JoinButton" type="Button" parent="."]
+offset_left = 569.0
+offset_top = 290.0
+offset_right = 607.0
+offset_bottom = 321.0
+text = "Join"
 
-[node name="TicketManager" parent="." instance=ExtResource("2_r0du0")]
+[connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]
