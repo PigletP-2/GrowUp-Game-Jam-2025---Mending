@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci75ecppggk4p"]
+[gd_scene load_steps=7 format=3 uid="uid://ci75ecppggk4p"]
 
 [ext_resource type="Script" uid="uid://c4ymuo6sdniao" path="res://cardManager.gd" id="1_tbkxe"]
 [ext_resource type="PackedScene" uid="uid://bg6i2m5cnsp1f" path="res://Card.tscn" id="2_hpm8w"]
 [ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="3_br8jt"]
 [ext_resource type="Resource" uid="uid://b4chj7d0owdj3" path="res://addons/tube/game_context.tres" id="4_1sk7x"]
 [ext_resource type="Script" uid="uid://cj26lr5esjgyk" path="res://MultiplayerManager.gd" id="5_dpvpm"]
-[ext_resource type="PackedScene" uid="uid://dujkendqt6ls1" path="res://addons/tube/tube_inspector.tscn" id="6_hpm8w"]
 [ext_resource type="Script" uid="uid://crmord4ulq3sq" path="res://addons/tube/test_spawner.gd" id="7_br8jt"]
 
 [node name="Main" type="Node2D"]
@@ -23,7 +22,7 @@ position = Vector2(845, 346)
 [node name="TubeClient" type="Node" parent="." node_paths=PackedStringArray("multiplayer_root_node")]
 script = ExtResource("3_br8jt")
 context = ExtResource("4_1sk7x")
-multiplayer_root_node = NodePath("../TubeInspector")
+multiplayer_root_node = NodePath("")
 metadata/_custom_type_script = "uid://cy006uvidc4y"
 
 [node name="Label" type="Label" parent="."]
@@ -52,12 +51,6 @@ offset_left = 489.0
 offset_top = 275.0
 offset_right = 659.0
 offset_bottom = 340.0
-
-[node name="TubeInspector" parent="." instance=ExtResource("6_hpm8w")]
-offset_left = -76.0
-offset_top = 92.0
-offset_right = 448.0
-offset_bottom = 789.0
 
 [connection signal="_session_initiated" from="TubeClient" to="." method="_on_tube_client__session_initiated"]
 [connection signal="session_created" from="TubeClient" to="." method="_on_tube_client_session_created"]
