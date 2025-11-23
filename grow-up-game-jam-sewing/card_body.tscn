@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://crhht1oqs12p0"]
+[gd_scene load_steps=3 format=3 uid="uid://crhht1oqs12p0"]
 
 [ext_resource type="Script" uid="uid://dq2xqebds8eqx" path="res://Scripts/card_body.gd" id="1_kqbdp"]
-[ext_resource type="Texture2D" uid="uid://jrbnnouwqxc6" path="res://Sprites/Pants.png" id="2_0ko7q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd2wi"]
 size = Vector2(90, 100)
@@ -13,9 +12,6 @@ script = ExtResource("1_kqbdp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dd2wi")
-
-[node name="Pants" type="Sprite2D" parent="."]
-texture = ExtResource("2_0ko7q")
 
 [connection signal="clicked" from="." to="." method="_on_clicked"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]

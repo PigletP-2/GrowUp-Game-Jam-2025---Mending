@@ -1,6 +1,7 @@
 extends Node2D
 
 const CARD_REF = preload("res://card_body.tscn")
+const CLOTHING_REF = preload("res://clothing_info.tscn")
 
 var tasks = {"RedButts": 0, "BlueButts": 0, "YellowButts": 0, "Patches": 0}
 var needs_sewing = false
@@ -10,7 +11,9 @@ var item
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	item = CARD_REF.instantiate()
+	var clothing_info = CLOTHING_REF.instantiate()
 	add_child(item)
+	item.add_child(clothing_info)
 	item.set_position(Vector2(100,100))
 	pick_tasks()
 	print("card made")
