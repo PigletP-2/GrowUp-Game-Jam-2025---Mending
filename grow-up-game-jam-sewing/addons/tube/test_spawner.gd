@@ -1,6 +1,6 @@
 extends Node
 
-const CARD = preload("res://Card.tscn")
+const CARD = preload("res://card_body.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

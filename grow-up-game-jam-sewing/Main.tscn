@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bib76auiumexo"]
+[gd_scene load_steps=4 format=3 uid="uid://bib76auiumexo"]
 
-[ext_resource type="Script" uid="uid://c4ymuo6sdniao" path="res://cardManager.gd" id="1_uu6xs"]
-[ext_resource type="PackedScene" uid="uid://bg6i2m5cnsp1f" path="res://Card.tscn" id="2_r0du0"]
+[ext_resource type="Script" uid="uid://cj275ltbfrxk2" path="res://Scripts/main.gd" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://crhht1oqs12p0" path="res://card_body.tscn" id="2_uu6xs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu6xs"]
+size = Vector2(1160, 20)
 
 [node name="Main" type="Node2D"]
-
-[node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("1_uu6xs")
 
-[node name="Card" parent="CardManager" instance=ExtResource("2_r0du0")]
+[node name="CardBody" parent="." groups=["pickable"] instance=ExtResource("2_uu6xs")]
+position = Vector2(120, 105)
+mass = 5.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(582, 636)
+shape = SubResource("RectangleShape2D_uu6xs")
