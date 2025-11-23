@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddreqfmvnqqp0"]
+
+[ext_resource type="Script" uid="uid://c1ehfemktesjf" path="res://Scripts/ticket_manager.gd" id="1_6u7nr"]
+
+[node name="TicketManager" type="Node2D" groups=["spawner"]]
+script = ExtResource("1_6u7nr")
+
+[node name="TicketTime" type="Timer" parent="."]

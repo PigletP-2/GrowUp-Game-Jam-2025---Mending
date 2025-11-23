@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dd2wi"]
 size = Vector2(90, 100)
 
-[node name="CardBody" type="RigidBody2D"]
+[node name="CardBody" type="RigidBody2D" groups=["pickable"]]
 input_pickable = true
 gravity_scale = 0.0
 script = ExtResource("1_kqbdp")

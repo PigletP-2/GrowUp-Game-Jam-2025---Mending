@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Grow Up Game Jam Sewing"
-run/main_scene="uid://ci75ecppggk4p"
+run/main_scene="uid://bib76auiumexo"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,3 +26,8 @@ project/assembly_name="Grow Up Game Jam Sewing"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/tube/plugin.cfg")
+
+[global_group]
+
+spawner=""
+pickable=""

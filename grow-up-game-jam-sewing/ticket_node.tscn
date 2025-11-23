@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyt3gpj3hlrap"]
+
+[ext_resource type="Script" uid="uid://crh58jr3rp1bn" path="res://Scripts/ticket_node.gd" id="1_dm8f4"]
+
+[node name="TicketNode" type="Node2D"]
+script = ExtResource("1_dm8f4")

@@ -27,9 +27,8 @@ func drop(impulse=Vector2.ZERO):
 		freeze = false
 		apply_central_impulse(impulse)
 		held = false
-		set_linear_damp(0.1)
-		
-		
+		set_linear_damp(1)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
