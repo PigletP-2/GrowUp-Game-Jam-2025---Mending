@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6slw03hk5wha"]
+
+[ext_resource type="Script" uid="uid://c7ga5x141x3fb" path="res://Scripts/clamp_collider.gd" id="1_66t1x"]
+[ext_resource type="Texture2D" uid="uid://jrbnnouwqxc6" path="res://Sprites/Pants.png" id="2_lvok0"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_66t1x")
+
+[node name="Pants" type="Sprite2D" parent="."]
+z_as_relative = false
+position = Vector2(639, 332)
+scale = Vector2(4.0337048, 3.7900004)
+texture = ExtResource("2_lvok0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -58)
+polygon = PackedVector2Array(461, 175, 817, 197, 829, 419, 822, 584, 704, 576, 694, 330, 591, 326, 581, 582, 475, 594)
