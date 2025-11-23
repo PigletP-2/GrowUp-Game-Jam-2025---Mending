@@ -1,23 +1,16 @@
-
-[gd_scene load_steps=7 format=3 uid="uid://bib76auiumexo"]
+[gd_scene load_steps=6 format=3 uid="uid://bib76auiumexo"]
 
 [ext_resource type="Script" uid="uid://cj275ltbfrxk2" path="res://Scripts/main.gd" id="1_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://ddreqfmvnqqp0" path="res://ticket_manager.tscn" id="2_r0du0"]
-[ext_resource type="Script" uid="uid://cj26lr5esjgyk" path="res://MultiplayerManager.gd" id="1_fos0i"]
-[ext_resource type="PackedScene" uid="uid://crhht1oqs12p0" path="res://card_body.tscn" id="2_uu6xs"]
 [ext_resource type="PackedScene" uid="uid://dujkendqt6ls1" path="res://addons/tube/tube_inspector.tscn" id="3_3dxm6"]
 [ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="4_lgr22"]
 [ext_resource type="Resource" uid="uid://b4chj7d0owdj3" path="res://addons/tube/game_context.tres" id="5_trn2v"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_fos0i")
-
-[node name="TicketManager" parent="." instance=ExtResource("2_r0du0")]
-[node name="CardBody" parent="." groups=["pickable"] instance=ExtResource("2_uu6xs")]
-position = Vector2(960, 275)
-mass = 5.0
+script = ExtResource("1_uu6xs")
 
 [node name="TubeInspector" parent="." instance=ExtResource("3_3dxm6")]
+visible = false
 offset_left = 323.0
 offset_top = -1.0
 offset_right = 847.0
@@ -27,3 +20,5 @@ offset_bottom = 696.0
 script = ExtResource("4_lgr22")
 context = ExtResource("5_trn2v")
 metadata/_custom_type_script = "uid://cy006uvidc4y"
+
+[node name="TicketManager" parent="." instance=ExtResource("2_r0du0")]

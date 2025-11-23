@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwfrhdaqyvht7"]
+
+[ext_resource type="Script" uid="uid://c0audsflrjkkm" path="res://Scripts/notion_info.gd" id="1_udmxb"]
+
+[node name="Notion_Info" type="Node2D"]
+script = ExtResource("1_udmxb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
