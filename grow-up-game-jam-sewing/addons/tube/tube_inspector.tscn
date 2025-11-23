@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dujkendqt6ls1"]
+[gd_scene load_steps=13 format=3 uid="uid://dujkendqt6ls1"]
 
 [ext_resource type="Theme" uid="uid://bcibt73qths3g" path="res://addons/tube/inspector/theme.tres" id="1_xsva5"]
 [ext_resource type="Script" uid="uid://c6txv1voyurrl" path="res://addons/tube/inspector/tube_inspector.gd" id="2_6ede3"]
@@ -10,12 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://ckrifxh4o768d" path="res://addons/tube/inspector/peer_control.tscn" id="6_xyrfc"]
 [ext_resource type="PackedScene" uid="uid://btfc8o5xfs14w" path="res://addons/tube/inspector/messages_container.tscn" id="7_6bfdn"]
 [ext_resource type="PackedScene" uid="uid://bi8vgsoslhvrb" path="res://addons/tube/inspector/message_control.tscn" id="8_pnoa1"]
+[ext_resource type="Script" uid="uid://cy006uvidc4y" path="res://addons/tube/tube_client.gd" id="11_geh7p"]
+[ext_resource type="Resource" uid="uid://b4chj7d0owdj3" path="res://addons/tube/game_context.tres" id="12_2rkog"]
 
-[node name="TubeInspector" type="PanelContainer"]
+[node name="TubeInspector" type="PanelContainer" node_paths=PackedStringArray("client")]
 offset_right = 524.0
 offset_bottom = 565.0
 theme = ExtResource("1_xsva5")
 script = ExtResource("2_6ede3")
+client = NodePath("TubeClient")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -292,6 +295,12 @@ custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
+
+[node name="TubeClient" type="Node" parent="." node_paths=PackedStringArray("multiplayer_root_node")]
+script = ExtResource("11_geh7p")
+context = ExtResource("12_2rkog")
+multiplayer_root_node = NodePath("..")
+metadata/_custom_type_script = "uid://cy006uvidc4y"
 
 [connection signal="pressed" from="VBoxContainer/HeaderContainer/HeaderButton" to="." method="_on_header_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HeaderContainer/MarginContainer/VContainer/SessionContainer/JoinButton" to="." method="_on_join_button_pressed"]
