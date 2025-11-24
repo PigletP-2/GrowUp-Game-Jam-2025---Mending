@@ -1,22 +1,28 @@
 extends Node2D
 
-var type
+var notion_type
+var parent 
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	parent = get_parent()
+	parent.child = self
+	parent.type = "notion"
+	var sprite = $Sprite2D
 	match rng.randi_range(1,5):
 		1:
-			type = "RedButton"
+			notion_type = "RedButton"
+			sprite.texture = preload("res://Sprites/red_button.png")
 		2:
-			type = "BlueButton"
+			notion_type = "BlueButton"
+			sprite.texture = preload("res://Sprites/Button.png")
 		3: 
-			type = "YellowButton"
+			notion_type = "YellowButton"
+			sprite.texture = preload("res://Sprites/yellow_button.png")
 		4:
-			type = "Patch"
+			notion_type = "Patch"
+			sprite.texture = preload("res://Sprites/patch.png")
 		5:
-			type = "ThreadAndNeedle"
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+			notion_type = "ThreadAndNeedle"
+			sprite.texture = preload("res://Sprites/needle.png")

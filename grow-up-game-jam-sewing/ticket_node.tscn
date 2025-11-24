@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyt3gpj3hlrap"]
+[gd_scene load_steps=3 format=3 uid="uid://dyt3gpj3hlrap"]
 
 [ext_resource type="Script" uid="uid://crh58jr3rp1bn" path="res://Scripts/ticket_node.gd" id="1_dm8f4"]
 
-[node name="TicketNode" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm8f4"]
+size = Vector2(45, 43)
+
+[node name="TicketNode" type="Area2D"]
 script = ExtResource("1_dm8f4")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-22, -21, 22, -21, 22, 21, -22, 21)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dm8f4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

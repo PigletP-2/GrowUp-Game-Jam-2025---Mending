@@ -4,7 +4,13 @@ signal clicked
 
 var held = false
 var friction = Vector2(10,10)
+var type
+var child
 
+func _ready():
+	contact_monitor = true
+	max_contacts_reported = 10
+	
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -29,12 +35,8 @@ func drop(impulse=Vector2.ZERO):
 		held = false
 		set_linear_damp(1)
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_body_entered(body: Node) -> void:
+	if type == "clothing" and body.type == "notion":
+		child.notions.append(body.child.notion_type)
+		body.queue_free()
+		print(child.notions)
