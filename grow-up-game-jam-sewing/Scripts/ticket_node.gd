@@ -19,10 +19,6 @@ func _ready() -> void:
 	set_monitoring(true)
 	print("card made")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func pick_tasks():
 	if rng.randi_range(0,1):
 		needs_sewing = true
