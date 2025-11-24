@@ -16,13 +16,13 @@ func _ready() -> void:
 			sprite.texture = preload("res://Sprites/red_button.png")
 		2:
 			notion_type = "BlueButton"
-			sprite.texture = preload("res://Sprites/Button.png")
+			sprite.texture = preload("res://Sprites/Button 1.png")
 		3: 
 			notion_type = "YellowButton"
 			sprite.texture = preload("res://Sprites/yellow_button.png")
 		4:
 			notion_type = "Patch"
-			sprite.texture = preload("res://Sprites/patch.png")
+			sprite.texture = preload("res://Sprites/patch 1.png")
 		5:
 			notion_type = "ThreadAndNeedle"
 			sprite.texture = preload("res://Sprites/needle.png")
