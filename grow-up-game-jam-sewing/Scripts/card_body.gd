@@ -6,7 +6,13 @@ signal exit_right
 
 var held = false
 var friction = Vector2(10,10)
+var type
+var child
 
+func _ready():
+	contact_monitor = true
+	max_contacts_reported = 10
+	
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
@@ -30,12 +36,6 @@ func drop(impulse=Vector2.ZERO):
 		apply_central_impulse(impulse)
 		held = false
 		set_linear_damp(1)
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
