@@ -6,7 +6,7 @@ const SERVER_ADDRESS = "localhost"
 var peer =  ENetMultiplayerPeer.new()
 var peerIDs = []
 
-@export var player_field_scene : PackedScene
+#@export var player_field_scene : PackedScene
 #@export var player_2_field_scene : PackedScene
 
 
@@ -18,9 +18,9 @@ func _on_host_button_pressed() -> void:
 	
 	multiplayer.multiplayer_peer = peer
 	
-	var player_scene = player_field_scene.instantiate()
-	print("Sensie")
-	add_child(player_scene)
+	#var player_scene = player_field_scene.instantiate()
+	#print("Sensie")
+	#add_child(player_scene)
 	
 
 	
@@ -35,8 +35,8 @@ func _on_join_button_pressed() -> void:
 	multiplayer.peer_connected.connect(_on_peer_connected)
 	
 	
-	var player_scene = player_field_scene.instantiate()
-	add_child(player_scene)
+	#var player_scene = player_field_scene.instantiate()
+	#add_child(player_scene)
 	
 func _on_peer_connected(peer_id):
 	peerIDs.append(peer_id)
@@ -65,4 +65,12 @@ func _input(event):
 			peerIDs = multiplayer.get_peers()
 			print(multiplayer.get_unique_id())
 			print_own_id.rpc_id(peerIDs[0])
-			
+			print(peerIDs)
+
+
+func _on_card_body_exit_left() -> void:
+	print("it got emitted")
+
+
+func _on_card_body_exit_right() -> void:
+	pass # Replace with function body.

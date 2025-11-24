@@ -1,6 +1,8 @@
 extends RigidBody2D
 
 signal clicked
+signal exit_left
+signal exit_right
 
 var held = false
 var friction = Vector2(10,10)
@@ -38,3 +40,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	if global_position.x < 0:
+		print("exit left")
+		exit_left.emit()
+	elif global_position.x > 648:
+		exit_right.emit()
+		print("exit right")

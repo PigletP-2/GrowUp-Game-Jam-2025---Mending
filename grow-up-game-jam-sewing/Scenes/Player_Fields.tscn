@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqaij5xfnwhk0"]
+[gd_scene load_steps=4 format=3 uid="uid://bqaij5xfnwhk0"]
 
-[ext_resource type="Script" path="res://Multiplayer.gd" id="1_jq8b5"]
 [ext_resource type="PackedScene" uid="uid://ddreqfmvnqqp0" path="res://ticket_manager.tscn" id="1_xbc0f"]
 [ext_resource type="PackedScene" uid="uid://crhht1oqs12p0" path="res://card_body.tscn" id="2_jq8b5"]
 [ext_resource type="Script" uid="uid://cj275ltbfrxk2" path="res://Scripts/main.gd" id="3_griwe"]
 
 [node name="PlayerField" type="Node2D"]
-script = ExtResource("1_jq8b5")
 
 [node name="CardBody" parent="." instance=ExtResource("2_jq8b5")]
 position = Vector2(960, 275)
